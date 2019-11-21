@@ -11,6 +11,7 @@ var express = require("express");
   cors = require("cors");
   app = express();
   path = require('path');
+  // const router = express.Router();
   bodyParser = require("body-parser");
   port = process.env.PORT || 3000;
   app.use(bodyParser.json());
@@ -266,6 +267,7 @@ app.route("/labyrinth/tests").post((req, res) => {
   testsArray.push(_testPathfinding(testMaze));
   res.status(200).send(testsArray);
 })
+
 
 // Listen for POST requests
 app.route("/labyrinth").post((req, res) => {
