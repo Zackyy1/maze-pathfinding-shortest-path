@@ -256,7 +256,7 @@ function unParseMaze(maze) {
   return unparsedMaze
 }
 
-app.post("/labyrinth/tests", (req, res) => {
+app.route("/labyrinth/tests").post((req, res) => {
   // Begin tests and push test with result to array
   testsArray = [];
   testMaze = unParseMaze(req.body);
@@ -268,7 +268,7 @@ app.post("/labyrinth/tests", (req, res) => {
 })
 
 // Listen for POST requests
-app.post("/labyrinth", (req, res) => {
+app.route("/labyrinth").post((req, res) => {
 
   // variable maze - array of arrays containing cells
   maze = unParseMaze(req.body)
@@ -291,7 +291,7 @@ app.post("/labyrinth", (req, res) => {
 })
 
 // Listen for POST requests
-app.post("/labyrinth2", (req, res) => {
+app.route("/labyrinth2").post((req, res) => {
 
   // variable maze - array of arrays containing cells
   maze = unParseMaze(req.body)

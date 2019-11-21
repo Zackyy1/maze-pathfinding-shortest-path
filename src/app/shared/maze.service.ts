@@ -7,7 +7,6 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { isNumber } from 'util';
 const API_URL = environment.apiUrl
 
-
 export interface MazeCells {
   _body: string;
   cells: any[]
@@ -48,6 +47,7 @@ export class MazeService {
   popup
   observablePopup
   testMaze: Array<any> = [ [".", ".", "."],
+
   ["#", "#", "."],
   [".", ".", "."],
   [".", "#", "#"],
