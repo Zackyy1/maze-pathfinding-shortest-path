@@ -18,6 +18,8 @@ var express = require("express");
 
   var maze = [];
 
+  app.use(express.static(__dirname + '/dist/labyrinth'));
+
 
   app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/labyrinth/index.html'));
