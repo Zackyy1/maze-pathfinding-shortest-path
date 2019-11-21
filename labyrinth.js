@@ -20,7 +20,7 @@ var express = require("express");
 
 
   app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/maze-pathfinder-rendemental/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/labyrinth/index.html'));
   });
 
   /**
