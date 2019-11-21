@@ -1,0 +1,75 @@
+<div>
+  <div>
+      <form>
+        <div class="inline">
+            <label class="maze-label">Maze width</label>
+          <input class="maze-size" type="number" (input)="changeSize('width', $event)" [defaultValue]="sizeX">
+          <label class="maze-label">Maze height</label>
+          <input class="maze-size" type="number" (input)="changeSize('height', $event)" [defaultValue]="sizeY">
+          
+        </div>
+
+          <div class="checkbox-wrapper">
+              <input type="checkbox" class="checkbox" (click)="toggleCells($event)">
+              <label class="checkbox-label" for="">Show cell values</label>
+          </div>
+          <h3 style="text-align: center">Check console (F12 in Chrome) for http errors!</h3>
+
+          
+    </form>
+    
+  
+  
+  <div>
+
+  
+  <table>
+    <tbody>
+      <thead>
+        <tr>
+          <th class="helper">start</th>
+        </tr>
+      </thead>
+      <tr class="row" *ngFor="let row of maze.cells">
+        <td class="cell" [ngClass]="cell.status == 'shortest' ? 'shortest' : cell.status == 'visited' ? 'visited' : noclass" (click)="onClick(row, cell)"   *ngFor="let cell of row">
+              {{ showCells ? cell.state : null}}
+              <div [ngClass]="(cell.state == '#' && !showCells) ? 'wall' : (cell.state != '#' && !showCells) ? 'path' : noclass" ></div>
+              <img  *ngIf="cell.status == 'shortest'"[ngClass]="(cell.status == 'shortest' && !isLastCell(cell)) ? 'img foot' : 'img2 last'" alt="">
+        </td>
+      </tr>
+      <th class="end-helper">end</th>
+    </tbody>
+  </table>
+
+  <h2>{{ popup }}</h2>
+  <button class="btn submit" (click)="start()">Begin</button>
+  
+</div>
+
+  <div class="custom-input">
+    <form>
+      <label for="">Custom labyrinth array <br>
+        (<br>
+          [
+  [".", ".", "."],<br>
+  ["#", "#", "."],<br>
+  [".", ".", "."],<br>
+  [".", "#", "#"],<br>
+  [".", ".", "."]
+]<br>
+        )
+        <br>
+        <p>This maze is sending a separate POST request,<br> that only returns a number of minimum steps required.<br> It does not
+          affect maze visuals, <br>like show the shortest path</p> 
+      </label>
+      <br>
+      <textarea [value]="stringify(customMaze)" type="text" (input)="setCustomMaze($event)" cols="40" rows="5"></textarea>
+      <button class="btn" (click)="submitCustomMaze($event)">Submit Custom Maze</button>
+    </form>
+  </div>
+</div>
+ 
+
+
+
+</div>
