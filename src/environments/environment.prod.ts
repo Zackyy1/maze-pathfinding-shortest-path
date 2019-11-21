@@ -3,5 +3,5 @@ export const environment = {
   production: true,
 
   // URL of development API
-  apiUrl: ''
+  apiUrl: 'https://maze-pathfinder-rendemental.herokuapp.com'
 };
