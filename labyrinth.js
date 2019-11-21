@@ -17,6 +17,11 @@ var express = require("express");
 
   var maze = [];
 
+
+  app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/maze-pathfinder-rendemental/index.html'));
+  });
+
   /**
    * Check if cell we"re going to is already visited
    * If visited, skip pathfinding through this cell
