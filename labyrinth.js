@@ -10,6 +10,7 @@
 var express = require("express");
   cors = require("cors");
   app = express();
+  path = require('path');
   bodyParser = require("body-parser");
   port = process.env.PORT || 3000;
   app.use(bodyParser.json());
