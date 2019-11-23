@@ -114,7 +114,12 @@ export class MazeService {
     .subscribe(
       (e) => {
 
-        console.log('RESPONSE', e)
+
+        // This is the response from API, containing a number if an array is POSTed,
+        // or a modified Maze if sent from the UI maze
+        const response = e
+
+        console.log(response)
         
         // Update maze with modified one
         // Update popup value if maze pathfinding was successful
