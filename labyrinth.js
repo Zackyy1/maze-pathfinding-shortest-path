@@ -308,7 +308,7 @@ app.route("/labyrinth2").post((req, res) => {
       error: "No valid path found"
     })
   : 
-  res.status(200).send(Number(minimumSteps))
+  res.status(200).send(String(minimumSteps))
   
 })
 
