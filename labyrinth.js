@@ -27,12 +27,12 @@ var express = require("express");
   });
 
   /**
-   * Check if cell we"re going to is already visited
+   * Check if cell we're going to is already visited
    * If visited, skip pathfinding through this cell
    * @param {number} x - New cell X
    * @param {number} y  - New cell Y
    * @param {Array} visitedCells  - Array of visited cells
-   * @returns {boolean} True if cell we"re going to is not visited
+   * @returns {boolean} True if cell we're going to is not visited
    */
 
 function findCellInVisited(x, y, visitedCells, queue) {
@@ -53,7 +53,7 @@ function findCellInVisited(x, y, visitedCells, queue) {
     }
   })
 
-  // If new cell wasn"t visited and is not already in queue, returns true
+  // If new cell wasn't visited and is not already in queue, returns true
   return toReturn
 }
 
@@ -61,7 +61,7 @@ function findCellInVisited(x, y, visitedCells, queue) {
 /**
  * 
  * @param {Object} current - Current "location" Object {x, y, path}
- * @param {string} direction - Direction we"re going (i.e. "right", "down")
+ * @param {string} direction - Direction we're going (i.e. "right", "down")
  */
 function switchCell(current, direction) {
   // Define shortcut x, y
@@ -69,11 +69,11 @@ function switchCell(current, direction) {
   let y = current.y;
   let newPath = current.path.slice()
   
-  // Add new visited cell to it"s path
-  // It"s used to keep track of visited cells if we reach the end
+  // Add new visited cell to it's path
+  // It's used to keep track of visited cells if we reach the end
   newPath.push({"x": current.x, "y": current.y})
 
-  // Check if we"re not moving outside maze"s boundaries
+  // Check if we're not moving outside maze's boundaries
   if (  (x < 0 || y < 0 || x > maze[0].length-1 || y > maze.length-1)) {
     return current
   }
